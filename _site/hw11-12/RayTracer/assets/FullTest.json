@@ -1,0 +1,87 @@
+{
+	"camera" : {
+		"eye" : [0.0, 1.5, 0.0],
+		"up" : [0.0, 1.0, 0.0],
+		"at" : [0.0, 0.0, -5.5],
+		"fovy" : 55, "aspect" : 1 
+	},
+	"bounce_depth" : 1,
+	"shadow_bias" : 0.0001,
+
+	"lights" : [ 
+		{"source" : "Ambient", "color" : [0.05,0.05,0.05]},
+		{"source" : "Point", "position" : [-2, 4, -3], "color" : [0.8,0.8,0.8]}
+	],
+
+	"materials" : [ 
+		{
+			"name" : "The floor",
+			"ka" : [1,1,1],
+			"kd" : [0.4,0.4,0.4],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0.9,0.9,0.9]
+		},
+		{
+			"name" : "Reflective ball",
+			"ka" : [1,0.75,0.75],
+			"kd" : [1,0.75,0.75],
+			"ks" : [1,1,1],
+			"shininess" : 50,
+			"kr" : [0.75,0.75,0.75]
+		},
+		{
+			"name" : "Diffuse ball",
+			"ka" : [0.75,0.75,1],
+			"kd" : [0.75,0.75,1],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0,0,0]
+		}
+	],
+
+	"surfaces" : [
+		{
+			"name" : "Reflective ball",
+			"shape" : "Sphere",
+			"center" : [1,0,-1],
+			"radius" : 1,
+			"material" : 1,
+			"transforms" : [
+				["Translate", [0, 0.5, -5]]
+			]
+		},
+		{
+			"name" : "Diffuse ball",
+			"shape" : "Sphere",
+			"center" : [-1,0,0],
+			"radius" : 1,
+			"material" : 2,
+			"transforms" : [
+				["Translate", [0, 0.5, -5]]
+			]
+		},
+		{
+			"name" : "The floor",
+			"shape" : "Triangle",
+			"p1" : [-1000,0,-1000],
+			"p2" : [-1000, 0, 1000],
+			"p3" : [1000, 0, 1000],
+			"material" : 0,
+			"transforms" : [
+				["Translate", [0, 0.5, 0]]
+			]
+		},
+		{
+			"name" : "The floor",
+			"shape" : "Triangle",
+			"p1" : [1000,0,1000],
+			"p2" : [1000, 0, -1000],
+			"p3" : [-1000, 0, -1000],
+			"material" : 0,
+			"transforms" : [
+				["Translate", [0, 0.5, 0]]
+			]
+		}
+	]
+}

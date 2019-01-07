@@ -1,0 +1,3 @@
+baseurl: "/cecilycao/CS5310-ComputerGraphicsHW-YeCao"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown

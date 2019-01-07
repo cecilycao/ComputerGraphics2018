@@ -1,0 +1,2 @@
+Skybox images are based on an HDR environment texture by Brian James
+http://www.food4rhino.com/materials-textures/incheon-airport

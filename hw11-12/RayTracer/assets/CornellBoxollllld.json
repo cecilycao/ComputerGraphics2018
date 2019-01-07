@@ -1,0 +1,161 @@
+{
+	"camera" : { //key
+		"eye" : [0.0, 0.0, 40.0], //vector[x, y ,z]: location of camera
+		"up" : [0.0, 1.0, 0.0], //vector point straigt up
+		"at" : [0.0, 0.0, 9.9],//the direction camera looking at
+		"fovy" : 36.5, "aspect" : 1 //ratio, 1 : square//values
+	},
+	"bounce_depth" : 1, //how many times rays bounce, 1: \/
+	"shadow_bias" : 0.005, 
+
+	"lights" : [ //lights is an array
+		//object representing light
+		//type of light                   		grey
+		{"source" : "Ambient", "color" : [0.05,0.05,0.05]}, 
+		//point light has position and color, do not have fall of(distance not matter)
+		{"source" : "Point", "position" : [0, 9, 0], "color" : [1,1,1]}
+	],
+
+	"materials" : [ //array of objects
+		{
+			"name" : "The box",
+			"ka" : [1,1,1],	//component names (refer to rendering slides) //range: 0-1
+			"kd" : [0.8,0.8,0.8], //diffuse light grey
+			"ks" : [0,0,0],	//specular 
+			"shininess" : 0, //exponent
+			"kr" : [0,0,0] //reflection
+		},
+		{
+			"name" : "Diffuse Sphere",
+			"ka" : [1,1,1],
+			"kd" : [0.8,0.8,0.8],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0,0,0]
+		},
+		{
+			"name" : "Mirror Sphere",
+			"ka" : [1,1,1],
+			"kd" : [0,0,0],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0.9,0.9,0.9]
+		},
+		{
+			"name" : "Red wall",
+			"ka" : [1,0,0],
+			"kd" : [1,0,0],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0,0,0]
+		},
+		{
+			"name" : "Blue wall",
+			"ka" : [0,0,1],
+			"kd" : [0,0,1],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0,0,0]
+		}
+
+	],
+
+//10 triangles(1 square = 2 trangles), 2 spheres
+	"surfaces" : [
+		{
+			"name" : "Diffuse Sphere",
+			"shape" : "Sphere",
+			"center" : [5,-6,1],
+			"radius" : 4,
+			"material" : 1 //index refering to previous material array
+		},
+		{
+			"name" : "Mirror Sphere",
+			"shape" : "Sphere",
+			"center" : [-5,-6,-5],
+			"radius" : 4,
+			"material" : 2
+		},
+
+		{
+			"name" : "Floor", //just a name, not key
+			"shape" : "Triangle",
+			"p1" : [-10, -10, 10], //3 points of triangle
+			"p2" : [10, -10, -10],
+			"p3" : [-10, -10, -10],
+			"material" : 0
+		},
+		{
+			"name" : "Floor",
+			"shape" : "Triangle",
+			"p1" : [10, -10, 10],
+			"p2" : [10, -10, -10],
+			"p3" : [-10, -10, 10],
+			"material" : 0
+		},
+		{
+			"name" : "Ceiling",
+			"shape" : "Triangle",
+			"p1" : [-10, 10, 10],
+			"p2" : [10, 10, -10],
+			"p3" : [-10, 10, -10],
+			"material" : 0
+		},
+		{
+			"name" : "Ceiling",
+			"shape" : "Triangle",
+			"p1" : [10, 10, 10],
+			"p2" : [10, 10, -10],
+			"p3" : [-10, 10, 10],
+			"material" : 0
+		},
+		{
+			"name" : "Front wall",
+			"shape" : "Triangle",
+			"p1" : [-10, -10, -10],
+			"p2" : [10, 10, -10],
+			"p3" : [-10, 10, -10],
+			"material" : 0
+		},
+		{
+			"name" : "Front wall",
+			"shape" : "Triangle",
+			"p1" : [10, -10, -10],
+			"p2" : [10, 10, -10],
+			"p3" : [-10, -10, -10],
+			"material" : 0
+		},
+		{
+			"name" : "Red wall",
+			"shape" : "Triangle",
+			"p1" : [-10, 10, 10],
+			"p2" : [-10, -10, -10],
+			"p3" : [-10, 10, -10],
+			"material" : 3
+		},
+		{
+			"name" : "Red wall",
+			"shape" : "Triangle",
+			"p1" : [-10, -10, 10],
+			"p2" : [-10, -10, -10],
+			"p3" : [-10, 10, 10],
+			"material" : 3
+		},
+		{
+			"name" : "Blue wall",
+			"shape" : "Triangle",
+			"p1" : [10, -10, 10],
+			"p2" : [10, 10, -10],
+			"p3" : [10, -10, -10],
+			"material" : 4
+		},
+		{
+			"name" : "Blue wall",
+			"shape" : "Triangle",
+			"p1" : [10, 10, 10],
+			"p2" : [10, 10, -10],
+			"p3" : [10, -10, 10],
+			"material" : 4
+		}
+	]
+}

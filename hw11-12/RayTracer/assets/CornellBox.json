@@ -1,0 +1,157 @@
+{
+	"camera" : {
+		"eye" : [0.0, 0.0, 40.0],
+		"up" : [0.0, 1.0, 0.0],
+		"at" : [0.0, 0.0, 9.9],
+		"fovy" : 36.5, "aspect" : 1 
+	},
+	"bounce_depth" : 1,
+	"shadow_bias" : 0.005,
+
+	"lights" : [ 
+		{"source" : "Ambient", "color" : [0.05,0.05,0.05]},
+		{"source" : "Point", "position" : [0, 9, 0], "color" : [1,1,1]}
+	],
+
+	"materials" : [ 
+		{
+			"name" : "The box",
+			"ka" : [1,1,1],
+			"kd" : [0.8,0.8,0.8],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0,0,0]
+		},
+		{
+			"name" : "Diffuse Sphere",
+			"ka" : [1,1,1],
+			"kd" : [0.8,0.8,0.8],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0,0,0]
+		},
+		{
+			"name" : "Mirror Sphere",
+			"ka" : [1,1,1],
+			"kd" : [0,0,0],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0.9,0.9,0.9]
+		},
+		{
+			"name" : "Red wall",
+			"ka" : [1,0,0],
+			"kd" : [1,0,0],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0,0,0]
+		},
+		{
+			"name" : "Blue wall",
+			"ka" : [0,0,1],
+			"kd" : [0,0,1],
+			"ks" : [0,0,0],
+			"shininess" : 0,
+			"kr" : [0,0,0]
+		}
+
+	],
+
+	"surfaces" : [
+		{
+			"name" : "Diffuse Sphere",
+			"shape" : "Sphere",
+			"center" : [5,-6,1],
+			"radius" : 4,
+			"material" : 1
+		},
+		{
+			"name" : "Mirror Sphere",
+			"shape" : "Sphere",
+			"center" : [-5,-6,-5],
+			"radius" : 4,
+			"material" : 2
+		},
+
+		{
+			"name" : "Floor",
+			"shape" : "Triangle",
+			"p1" : [-10, -10, 10],
+			"p2" : [10, -10, -10],
+			"p3" : [-10, -10, -10],
+			"material" : 0
+		},
+		{
+			"name" : "Floor",
+			"shape" : "Triangle",
+			"p1" : [10, -10, 10],
+			"p2" : [10, -10, -10],
+			"p3" : [-10, -10, 10],
+			"material" : 0
+		},
+		{
+			"name" : "Ceiling",
+			"shape" : "Triangle",
+			"p1" : [-10, 10, 10],
+			"p2" : [10, 10, -10],
+			"p3" : [-10, 10, -10],
+			"material" : 0
+		},
+		{
+			"name" : "Ceiling",
+			"shape" : "Triangle",
+			"p1" : [10, 10, 10],
+			"p2" : [10, 10, -10],
+			"p3" : [-10, 10, 10],
+			"material" : 0
+		},
+		{
+			"name" : "Front wall",
+			"shape" : "Triangle",
+			"p1" : [-10, -10, -10],
+			"p2" : [10, 10, -10],
+			"p3" : [-10, 10, -10],
+			"material" : 0
+		},
+		{
+			"name" : "Front wall",
+			"shape" : "Triangle",
+			"p1" : [10, -10, -10],
+			"p2" : [10, 10, -10],
+			"p3" : [-10, -10, -10],
+			"material" : 0
+		},
+		{
+			"name" : "Red wall",
+			"shape" : "Triangle",
+			"p1" : [-10, 10, 10],
+			"p2" : [-10, -10, -10],
+			"p3" : [-10, 10, -10],
+			"material" : 3
+		},
+		{
+			"name" : "Red wall",
+			"shape" : "Triangle",
+			"p1" : [-10, -10, 10],
+			"p2" : [-10, -10, -10],
+			"p3" : [-10, 10, 10],
+			"material" : 3
+		},
+		{
+			"name" : "Blue wall",
+			"shape" : "Triangle",
+			"p1" : [10, -10, 10],
+			"p2" : [10, 10, -10],
+			"p3" : [10, -10, -10],
+			"material" : 4
+		},
+		{
+			"name" : "Blue wall",
+			"shape" : "Triangle",
+			"p1" : [10, 10, 10],
+			"p2" : [10, 10, -10],
+			"p3" : [10, -10, 10],
+			"material" : 4
+		}
+	]
+}
