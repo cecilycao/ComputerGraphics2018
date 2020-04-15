@@ -1,7 +1,7 @@
 # CS 5310: Computer Graphics homework starter files
 
 This repository should be cloned and deployed to a GitHub pages site. When you've done this, your site should look like the one here:
-
+https://github.com/cecilycao/ComputerGraphics2018/_site/index.html
 https://pages.github.ccs.neu.edu/cecilycao/CS5310-ComputerGraphicsHW-YeCao
 
 ## Cloning and deploying the repo on GitHub Pages
